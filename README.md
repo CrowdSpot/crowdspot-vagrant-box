@@ -4,22 +4,30 @@
 1. You need to install virtualbox
 1. You also need to install vagrant
 1. Clone the github repository containing this README file:
+
     `git clone git@github.com:CrowdSpot/crowdspot-vagrant-box.git ~/crowdspot-vagrant-box`
 1. Obtain the virtualbox image (ubuntu 14.04 LTS) which contains the local development environment:
+
     `cd ~/crowdspot-vagrant-box && wget <uri to s3 bucket>`
 1. Clone the shareabouts repo locally (this will get synced into your virtual machine via the vagrant config):
+
     `cd ~/crowdspot-vagrant-box`
     `git clone git@github.com:CrowdSpot/shareabouts.git shareabouts`
 4. Checkout the v3 branch (this is effectively master, as far as you guys are concerned):
+
     `cd shareabouts && git checkout v3`
 5. Start up the vagrant box and ssh to it:
+
     `vagrant up` # Activate your virtualbox
     `vagrant ssh` # Enter your virtualbox, `vagrant` as default password if prompted
 6. Copy the local settings template to create a local settings file (this is done whilst ssh'd into the vagrant box):
+
     `cp /home/vagrant/shareabouts/src/project/local_settings.py.template /home/vagrant/shareabouts/src/project/local_settings.py`
 7. Restart the development servers on the vagrant box:
+
     `fab -f ~/fabfile restart_dev_servers`
 8. Access your local development environment:
+
     Go to `http://127.0.0.1:8000/` in your browser and you are good to go :)
 
 ## Development workflow - developing a new flavour
