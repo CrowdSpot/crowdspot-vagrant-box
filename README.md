@@ -12,6 +12,7 @@
 
     ```
     cd ~/crowdspot-vagrant-box && wget <uri to s3 bucket>
+    tar xvf crowdspot.box.tar.gz
     ```
 5. Clone the shareabouts repo locally (this will get synced into your virtual machine via the vagrant config):
 
