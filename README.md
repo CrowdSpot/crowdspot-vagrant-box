@@ -9,61 +9,72 @@
     git clone git@github.com:CrowdSpot/crowdspot-vagrant-box.git ~/crowdspot-vagrant-box
     ```
 4. Obtain the virtualbox image (ubuntu 14.04 LTS) which contains the local development environment:
-```
-cd ~/crowdspot-vagrant-box && wget <uri to s3 bucket>
-```
+
+    ```
+    cd ~/crowdspot-vagrant-box && wget <uri to s3 bucket>
+    ```
 5. Clone the shareabouts repo locally (this will get synced into your virtual machine via the vagrant config):
-```
-cd ~/crowdspot-vagrant-box
-git clone git@github.com:CrowdSpot/shareabouts.git shareabouts
-```
+
+    ```
+    cd ~/crowdspot-vagrant-box
+    git clone git@github.com:CrowdSpot/shareabouts.git shareabouts
+    ```
 6. Checkout the v3 branch (this is effectively master, as far as you guys are concerned):
-```
-cd shareabouts && git checkout v3
-```
+
+    ```
+    cd shareabouts && git checkout v3
+    ```
 7. Start up the vagrant box and ssh to it:
-```
-vagrant up # Activate your virtualbox
-vagrant ssh # Enter your virtualbox, 'vagrant' as default password if prompted
-```
+
+    ```
+    vagrant up # Activate your virtualbox
+    vagrant ssh # Enter your virtualbox, 'vagrant' as default password if prompted
+    ```
 8. Copy the local settings template to create a local settings file (this is done whilst ssh'd into the vagrant box):
-```
-cp /home/vagrant/shareabouts/src/project/local_settings.py.template /home/vagrant/shareabouts/src/project/local_settings.py
-```
+
+    ```
+    cp /home/vagrant/shareabouts/src/project/local_settings.py.template /home/vagrant/shareabouts/src/project/local_settings.py
+    ```
 9. Restart the development servers on the vagrant box:
-```
-fab -f ~/fabfile restart_dev_servers
-```
+
+    ```
+    fab -f ~/fabfile restart_dev_servers
+    ```
 10. Access your local development environment:
-```
-Go to http://127.0.0.1:8000/ in your browser and you are good to go :)
-```
+
+    ```
+    Go to http://127.0.0.1:8000/ in your browser and you are good to go :)
+    ```
 
 ## Development workflow - developing a new flavour
 
 1. On your local file system, checkout a new feature branch off v3 (let's for example's sake call it sekrit-project):
-```
-cd ~/crowdspot-vagrant-box/shareabouts
-git checkout v3
-git checkout -b feature-sekrit-project
-```
+
+    ```
+    cd ~/crowdspot-vagrant-box/shareabouts
+    git checkout v3
+    git checkout -b feature-sekrit-project
+    ```
 2. Create your new flavour, probably by copying an existing one and renaming the directory (again let's call it sekrit-project)
 3. Update local_settings.py to point at your new flavour (eg, change contents so FLAVOUR=sekrit-project)
 4. Restart the development servers on your virtualbox:
-```
-cd ~/crowdspot-vagrant-box && vagrant ssh
-fab -f ~/fabfile restart_dev_servers
-```
+
+    ```
+    cd ~/crowdspot-vagrant-box && vagrant ssh
+    fab -f ~/fabfile restart_dev_servers
+    ```
 5. Access your local development environment to review your changes:
-```
-Go to http://127.0.0.1:8000/ and you are good to go :)
-```
+
+    ```
+    Go to http://127.0.0.1:8000/ and you are good to go :)
+    ```
 6. Commit and push your changes on your local file system:
-```
-cd ~/crowdspot-vagrant-box/shareabouts
-git commit -m"Created the sekrit-project flavour and tested"
-git push origin feature-sekrit-project
-```
+
+    ```
+    cd ~/crowdspot-vagrant-box/shareabouts
+    git commit -m"Created the sekrit-project flavour and tested"
+    git push origin feature-sekrit-project
+    ```
 
 ## Development workflow - reviewing your colleague's flavour
 
