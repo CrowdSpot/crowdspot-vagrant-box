@@ -12,6 +12,7 @@
 1. Clone the shareabouts repo locally (this will get synced into your virtual machine via the vagrant config):
 
     `cd ~/crowdspot-vagrant-box`
+
     `git clone git@github.com:CrowdSpot/shareabouts.git shareabouts`
 4. Checkout the v3 branch (this is effectively master, as far as you guys are concerned):
 
