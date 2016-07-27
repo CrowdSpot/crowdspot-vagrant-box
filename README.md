@@ -11,8 +11,9 @@
 4. Obtain the virtualbox image (ubuntu 14.04 LTS) which contains the local development environment:
 
     ```
-    cd ~/crowdspot-vagrant-box && wget <uri to s3 bucket>
-    tar xvf crowdspot.box.tar.gz
+    # Ensure you are logged into the crowdspot aws console and then in your browser go to:
+        https://s3-ap-southeast-2.amazonaws.com/crowdspot-vagrant-box/crowdspot.box
+    # and save that file into the ~/crowdspot-vagrant-box  directory
     ```
 5. Clone the shareabouts repo locally (this will get synced into your virtual machine via the vagrant config):
 
