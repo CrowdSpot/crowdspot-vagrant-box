@@ -1,0 +1,21 @@
+# https://github.com/travis-ci/travis-ci/wiki/.travis.yml-options
+
+install: "ci/install.sh"
+script: "src/manage.py test project sa_api_v2 --with-coverage --cover-package=sa_api_v2"
+python:
+  - "2.7"
+notifications:
+  irc:
+    channels:
+      - "irc.freenode.org#shareabouts"
+    on_success: change
+    on_failure: always
+  email:
+    recipients:
+     - dev@openplans.org
+    on_success: change
+    on_failure: always
+
+# branches:
+#   only:
+#     - master
