@@ -26,23 +26,31 @@
     ```
     cd shareabouts && git checkout v3
     ```
-7. Start up the vagrant box and ssh to it:
+7. Ensure that any old vagrant boxes that might interfere with the new box you will install, are removed,
+   then add the new one you downloaded in step 4:
+    ```
+    vagrant box remove crowdspot.box
+    # Note that in the line below /path/to/my/home/directory/ must be replaced with the actual
+    # path to your home directory
+    vagrant box add file:///path/to/my/home/directory/crowdspot-vagrant-box/crowdspot.box
+    ```
+8. Start up the vagrant box and ssh to it:
 
     ```
     vagrant up # Activate your virtualbox
     vagrant ssh # Enter your virtualbox, 'vagrant' as default password if prompted
     ```
-8. Copy the local settings template to create a local settings file (this is done whilst ssh'd into the vagrant box):
+9. Copy the local settings template to create a local settings file (this is done whilst ssh'd into the vagrant box):
 
     ```
     cp /home/vagrant/shareabouts/src/project/local_settings.py.template /home/vagrant/shareabouts/src/project/local_settings.py
     ```
-9. Restart the development servers on the vagrant box:
+10. Restart the development servers on the vagrant box:
 
     ```
     fab -f ~/fabfile restart_dev_servers
     ```
-10. Access your local development environment:
+11. Access your local development environment:
 
     ```
     Go to http://127.0.0.1:8000/ in your browser and you are good to go :)
