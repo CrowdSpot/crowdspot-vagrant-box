@@ -19,7 +19,7 @@
 
     ```
     cd ~/crowdspot-vagrant-box
-    git clone git@github.com:CrowdSpot/shareabouts.git shareabouts
+    git clone git@gitlab.com:crowdspot/shareabouts.git shareabouts
     ```
 6. Checkout the v3 branch (this is effectively master, as far as you guys are concerned):
 
@@ -45,6 +45,13 @@
     ```
     cp /home/vagrant/shareabouts/src/project/local_settings.py.template /home/vagrant/shareabouts/src/project/local_settings.py
     ```
+10. Install Fabric 1.14.0 (not version 2) and add it to your path:
+
+    ```
+    pip install --user fabric==1.14.0
+    echo "export PATH=$PATH:/Users/anthony/Library/Python/2.7/bin" > ~/.bash_profile
+    ```
+
 10. Restart the development servers on the vagrant box:
 
     ```
