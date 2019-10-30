@@ -2,7 +2,7 @@
 # Web server
 # ==============================
 
-Django==1.6.5
+Django==1.11.23
 gevent==1.0
 gunicorn==18.0
 newrelic==2.16.0.12
