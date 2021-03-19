@@ -1,7 +1,7 @@
 # Documentation requires Django & Sphinx, and their dependencies...
 
 Django>=1.2.4
-Jinja2==2.5.5
+Jinja2==2.11.3
 Pygments==1.4
 Sphinx==1.0.7
 docutils==0.7
