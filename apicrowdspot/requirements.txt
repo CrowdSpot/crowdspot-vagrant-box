@@ -14,7 +14,7 @@ opbeat
 # Background processing
 # ==============================
 
-celery==3.1.13
+celery==5.2.2
 django-celery==3.1.10
 kombu==3.0.26
 
