@@ -59,7 +59,7 @@ git+https://github.com/miki725/django-rest-framework-bulk.git@148f2e7e92e341a431
 six>=1.4.1
 markdown  # For browsable API docs
 python-dateutil==2.2
-ujson==1.33
+ujson==5.4.0
 
 # The Django admin interface
 django-ace==1.0.1
